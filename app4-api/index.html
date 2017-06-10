@@ -1,6 +1,14 @@
 <html ng-app="apiApp">
-	<body>
-		
+<head>
+	<link rel="stylesheet" href="./style.css">
+</head>
+	<body ng-controller="pokeCtrl">
+		<input type="text" placeholder="poke search" ng-model="search" class="search-bar"></input>
+
+		<div ng-repeat="pokemon in display | filter: search" class="names">
+
+		<span style="font-weight: bold"> Pokemon name:</span> {{pokemon.name}}
+	 </div>
 				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
